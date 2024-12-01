@@ -24,10 +24,10 @@ export async function GET(req, res) {
    // =================================================
   
     const { MongoClient } = require('mongodb');
-  
-  
-   // const url = 'mongodb://root:example@localhost:27017/';
-   const url = 'mongodb+srv://floreaalin99:<db_password>@root.hasxx.mongodb.net/?retryWrites=true&w=majority&appName=root';
+
+    const url = process.env.DB_ADDRESS;
+    
+   // const url = 'mongodb+srv://floreaalin99:<db_password>@root.hasxx.mongodb.net/?retryWrites=true&w=majority&appName=root';
   
     const client = new MongoClient(url);
   
