@@ -34,7 +34,7 @@ function putInCart(pname){
   console.log("putting in cart: " + pname)
 
 
-  fetch("http://localhost:3000/api/putInCart?pname="+pname);
+  fetch("/api/putInCart?pname="+pname);
 
  
 
@@ -49,7 +49,7 @@ function putInCart(pname){
 
   useEffect(() => {
 
-        fetch('http://localhost:3000/api/getProducts')
+        fetch('/api/getProducts')
 
           .then((res) => res.json())
 
@@ -212,9 +212,8 @@ data.map((item, i) => (
     {item.price}
 
     <br></br>
-
-    <Button variant="outlined"> Add to cart </Button>
-
+  
+  <Button onClick={() => putInCart(item.pname)} variant="outlined"> Add to cart </Button>
   </div>
 
 ))
